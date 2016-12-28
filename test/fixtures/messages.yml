@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  challenger: MyString
+  time: MyString
+  date: MyString
+  location: MyString
+  body: MyText
+  accepted: false
+
+two:
+  challenger: MyString
+  time: MyString
+  date: MyString
+  location: MyString
+  body: MyText
+  accepted: false

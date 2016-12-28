@@ -1,0 +1,11 @@
+<h1>Messages#new</h1>
+<p>Find me in app/views/messages/new.html.erb</p>
+
+<%= form_for @message do |m| %>
+  <%= m.text_field :challenger, :value => current_fighter.name %>
+ message: <%= m.text_field :body %>
+ date: <%= m.text_field :date %>
+ time: <%= m.text_field :time %>
+ location: <%= m.text_field :location %>
+ <%= m.submit "Send Challenge" %>
+ <% end %>
