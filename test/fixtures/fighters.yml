@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  weight: 1
+  age: 1
+  style: MyString
+  location: MyString
+  wins: 1
+  losses: 1
+  likes1: MyString
+  likes2: MyString
+  likes3: MyString
+  likes4: MyString
+  likes5: MyString
+  likes6: MyString
+  likes7: MyString
+  likes8: MyString
+  likes9: MyString
+  likes10: MyString
+  hates1: MyString
+  hates2: MyString
+  hates3: MyString
+  hates4: MyString
+  hates5: MyString
+  hates6: MyString
+  hates7: MyString
+  hates8: MyString
+  hates9: MyString
+  hates10: MyString
+  password_digest: MyString
+
+two:
+  name: MyString
+  email: MyString
+  weight: 1
+  age: 1
+  style: MyString
+  location: MyString
+  wins: 1
+  losses: 1
+  likes1: MyString
+  likes2: MyString
+  likes3: MyString
+  likes4: MyString
+  likes5: MyString
+  likes6: MyString
+  likes7: MyString
+  likes8: MyString
+  likes9: MyString
+  likes10: MyString
+  hates1: MyString
+  hates2: MyString
+  hates3: MyString
+  hates4: MyString
+  hates5: MyString
+  hates6: MyString
+  hates7: MyString
+  hates8: MyString
+  hates9: MyString
+  hates10: MyString
+  password_digest: MyString

@@ -1,0 +1,70 @@
+<h1>Edit Fighter</h1>
+<div class="container">
+<%=form_for @fighter do |f| %>
+ <h2>name</h2> <%= f.text_field :name %>
+ <h2>email</h2> <%= f.text_field :email %>
+ <h2>new password</h2> <%= f.text_field :password %>
+ <h2>confirm password</h2> <%= f.text_field :password_confirmation %>
+</div>
+<div class="container">
+  <h2>age</h2> <%= f.number_field :age %>
+  <h2>weight</h2> <%= f.number_field :weight %>
+  <h2>fighting style</h2> <%= f.text_field :style %>
+  <h2>Location</h2> <%=f.select :location, [[" "],["Beverly Hills"],["Culver City"],["Downtown"],["East LA"],["Glendale"], ["Hollywood"],["Koreatown"],["Midcity"],["North Hollywood"],["Santa Monica"],["Silverlake"],["South LA"],["Venice"]]%>
+
+  <table>
+    <tr>
+      <th></th>
+      <th>I AM</th>
+      <th>I HATE</th>
+    </tr>
+      <th>Socio Economic</th>
+      <td><%=f.select :likes1, [ [], ["Rich AF"], ["Middle Class"], ["Broke AF"] ]%></td>
+      <td><%=f.select :hates1, [ [], ["Rich AF"], ["Middle Class"], ["Broke AF"] ]%></td>
+    </tr>
+    </tr>
+      <th>Religion</th>
+      <td><%=f.select :likes2, [[], ["Christian"], ["Jewish"],["Catholic"], ["Islamic"], ["Buddhist"], ["Taoist"], ["Hindu"], ["Sikh"], ["Rastafarian"], ["Pagan"], ["Wiccan"], ["Satanic"],["Atheist"] ]%></td>
+      <td><%=f.select :hates2, [[], ["Christian"], ["Jewish"],["Catholic"], ["Islamic"], ["Buddhist"], ["Taoist"], ["Hindu"], ["Sikh"], ["Rastafarian"], ["Pagan"], ["Wiccan"], ["Satanic"],["Atheist"] ]%></td>
+    </tr>
+    </tr>
+      <th>Nationality</th>
+      <td><%=f.select :likes3, [[],["African"],["American"],["Asian"],["Australian"],["Canadian"], ["European"],["Indian"],["Mexican"],["Middle Eastern"],["Pacific Islander"],["Russian"],["South American"]]%></td>
+      <td><%=f.select :hates3, [[],["African"],["American"],["Asian"],["Australian"],["Canadian"], ["European"],["Indian"],["Mexican"],["Middle Eastern"],["Pacific Islander"],["Russian"],["South American"]]%></td>
+    </tr>
+    </tr>
+      <th>Gang Affiliation</th>
+      <td><%=f.select :likes5, [ [],["Blood"],["Crip"],["XIII"],["XIV"]]%></td>
+      <td><%=f.select :hates5, [ [],["Blood"],["Crip"],["XIII"],["XIV"]]%></td>
+    </tr>
+    </tr>
+      <th>Pets</th>
+      <td><%=f.select :likes6, [ [],["Birds"],["Cats"],["Dogs"],["Reptiles"]]%></td>
+      <td><%=f.select :hates6, [ [],["Birds"],["Cats"],["Dogs"],["Reptiles"]]%></td>
+    </tr>
+    </tr>
+      <th>Diet</th>
+      <td><%=f.select :likes7, [[],["Omnivore"],["Paleo"],["Pescatarian"],["Vegetarian"],["Vegan"]]%></td>
+      <td><%=f.select :hates7, [[],["Omnivore"],["Paleo"],["Pescatarian"],["Vegetarian"],["Vegan"]]%></td>
+    </tr>
+    </tr>
+      <th>Computers</th>
+      <td><%=f.select :likes8, [[],["Apple"],["Linux"],["Microsoft"]]%></td>
+      <td><%=f.select :hates8, [[],["Apple"],["Linux"],["Microsoft"]]%></td>
+    </tr>
+    </tr>
+      <th>Sports</th>
+      <td><%=f.select :likes9, [[],["American Football"],["Baseball"],["Basketball"], ["Football/Soccer"],["Hockey"] ]%></td>
+      <td><%=f.select :hates9, [[],["American Football"],["Baseball"],["Basketball"], ["Football/Soccer"],["Hockey"]]%></td>
+    </tr>
+    </tr>
+      <th>Clique</th>
+      <td><%=f.select :likes10, [[],["Emo"],["Geek"],["Hood"],["Jock"],["Nerd"],["Prep"], ["Skater"],["Stoner"]]%></td>
+      <td><%=f.select :hates10, [[],["Emo"],["Geek"],["Hood"],["Jock"],["Nerd"],["Prep"], ["Skater"],["Stoner"]]%></td>
+    </tr>
+
+  </table>
+ <%= f.submit "Save" %>
+ <%= link_to 'Delete Profile', @fighter, method: :delete, data: { confirm: "Are you sure?" } %>
+ <% end %>
+</div>

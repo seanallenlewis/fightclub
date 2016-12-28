@@ -1,0 +1,28 @@
+<%= link_to "The Cage Page", fighters_path %>
+
+<div class="container">
+  <h1><%= @fighter.name.upcase %></h1>
+  <h3>Age:<%=@fighter.age%></h3>
+  <h3>Weight:<%= @fighter.weight%></h3>
+  <h3>Location: <%= @fighter.location %> </h3>
+  <h3>Member Since: <%= @date.to_s[0..10] %></h3>
+  <h3>Style: <%= @fighter.style %></h3>
+  <h3>Record:  <%=@fighter.wins%> / <%=@fighter.losses%>
+
+    <table>
+      <tr>
+        <th></th>
+        <th>I Am:</th>
+        <th>I Hate:</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td><%=@fighter.likes1%></br><%= @fighter.likes2%></br><%= @fighter.likes3%></br><%= @fighter.likes5%></br><%= @fighter.likes6%></br><%= @fighter.likes7%></br><%= @fighter.likes8%><br><%= @fighter.likes9%><br><%= @fighter.likes10%></td>
+        <td><%= @fighter.hates1 %></br><%= @fighter.hates2%></br><%= @fighter.hates3%></br><%= @fighter.hates5%></br><%= @fighter.hates6%></br><%= @fighter.hates7%></br><%= @fighter.hates8%></br><%= @fighter.hates9%></br><%= @fighter.hates10%></td>
+      </tr>
+    </table>
+
+</div>
+
+<%= link_to "Edit Fighter Info", edit_fighter_path %>
+<%= link_to "Logout", logout_path, {method: "DELETE"} %>

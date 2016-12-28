@@ -1,0 +1,15 @@
+<% if logged_in? %>
+<%= link_to "My Profile", fighter_path(current_fighter.id)%>
+<%end%>
+
+<h1>The Cage</h1>
+
+<h1>List of all the fighters</h1>
+<ul>
+  <% @fighters.each do |f| %>
+  <li>
+      <%= link_to(f.name, fighter_path(f)) %>
+
+  <% end %>
+  </li>
+</ul>
