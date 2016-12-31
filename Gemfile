@@ -7,12 +7,24 @@ gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# bootstrap sass
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+# bootswatch
+gem 'bootswatch-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+
+# Dot Env gem - hide enivronment variables
+gem 'dotenv-rails', group: :development, require: 'dotenv/rails-now'
+
+# photo uploads
+gem 'paperclip'
+gem 'aws-sdk'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -26,7 +38,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

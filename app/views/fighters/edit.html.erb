@@ -7,10 +7,11 @@
  <h2>confirm password</h2> <%= f.text_field :password_confirmation %>
 </div>
 <div class="container">
+  <h2>profile pic</h2> <%= f.file_field :profile_pic %> 
   <h2>age</h2> <%= f.number_field :age %>
   <h2>weight</h2> <%= f.number_field :weight %>
   <h2>fighting style</h2> <%= f.text_field :style %>
-  <h2>Location</h2> <%=f.select :location, [[" "],["Beverly Hills"],["Culver City"],["Downtown"],["East LA"],["Glendale"], ["Hollywood"],["Koreatown"],["Midcity"],["North Hollywood"],["Santa Monica"],["Silverlake"],["South LA"],["Venice"]]%>
+  <h2>location</h2> <%=f.select :location, [[" "],["Beverly Hills"],["Culver City"],["Downtown"],["East LA"],["Glendale"], ["Hollywood"],["Koreatown"],["Midcity"],["North Hollywood"],["Santa Monica"],["Silverlake"],["South LA"],["Venice"]]%>
 
   <table>
     <tr>

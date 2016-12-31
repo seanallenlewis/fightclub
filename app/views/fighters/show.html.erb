@@ -1,16 +1,30 @@
 <%= link_to "The Cage Page", fighters_path %>
 
 <div class="container">
-  <h1><%= @fighter.name.upcase %></h1>
-  <h3>Age:<%=@fighter.age%></h3>
-  <h3>Weight:<%= @fighter.weight%></h3>
-  <h3>Location: <%= @fighter.location %> </h3>
-  <h3>Member Since: <%= @date.to_s[0..10] %></h3>
-  <h3>Style: <%= @fighter.style %></h3>
-  <!-- <h3>Record:  <%=@fighter.wins%> / <%=@fighter.losses%> -->
-  <button type="button" class="btn btn-default"><%= link_to "Challenge Fighter",  new_message_path %></button>
+  <div class="row">
+    <div class="col-md-6">
+      <%= image_tag @fighter.profile_pic.url(:medium), class: "thumbnail" %>
+    </div>
+    <div class="col-md-6">
+      <h1><%= @fighter.name.upcase %></h1>
+      <h3>Age: <%=@fighter.age%></h3>
+      <h3>Weight: <%= @fighter.weight%></h3>
+      <h3>Location: <%= @fighter.location %> </h3>
+      <h3>Member Since: </h3> <h4><%= @date.to_s[0..10] %></h4>
+      <h3>Style: <%= @fighter.style %></h3>
+      <!-- <h3>Record:  <%=@fighter.wins%> / <%=@fighter.losses%> -->
+      <button id="challengeButton" type="button" class="btn btn-secondary btn-lg"><%= link_to "Challenge Fighter",  new_message_path %></button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
 
 
+
+</div>
+
+<div class="container">
     <table class="table table-bordered">
       <thead>
         <tr>
