@@ -16,13 +16,13 @@ Google search for bug fixes<br>
 #<u>User Stories</u>
 
 #<u>Site Map</u>
-![Site Flow](/images/markdown/lafight_flow.jpg)
+![Site Flow](app/assets/images/markdown/lafight_flow.jpg)
 
 #<u>Wire Frames</u>
-![Login](/assets/images/markdown/LaFightclubLogin_flow.jpg)
-![home](/assets/images/markdown/lafight_home.jpg)
-![profile](/assets/images/markdown/lafightclub_profile_page.jpg)
-![edit](/assets/images/markdown/lafight_edit_page.jpg)
+![Login](app/assets/images/markdown/LaFightclubLogin.jpg)
+![home](app/assets/images/markdown/lafight_home.jpg)
+![profile](app/assets/images/markdown/lafightclub_profile_page.jpg)
+![edit](app/assets/images/markdown/lafight_edit_page.jpg)
 
 #<u>Future Features and bugs<u>
 
