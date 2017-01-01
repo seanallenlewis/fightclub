@@ -1,28 +1,30 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#<u>Site Description</u>
 
-Things you may want to cover:
+Fightclub is a take on the fake site [Rumblr](http://mashable.com/2015/11/09/tinder-for-fighting-app-rumblr/#5ZSzT3tqP8qz), in which a user makes a profile and challenges other users in their neighborhood to a fight. In Fightclub, the approach was to taylor it around a profile cut from the cloth of Facebook more so than a mobile effort like Uber or a Tinder profile. 
 
-* Ruby version
+<u>**Tech Talk**<br></u>
+**Fightclub was built upon:**<br>
+Postgres version 9.6.1.0<br>
+Rails version 4.2.6<br>
+Amazon S3 for photo storage<br>
+Paperclip gem for photo uploads<br>
+bcrypt gem for authentication<br>
+Bootstrap / Bootswatch for styling options<br>
+Google search for bug fixes<br>
 
-* System dependencies
+#<u>User Stories</u>
 
-* Configuration
+#<u>Site Map</u>
+![Site Flow](/images/markdown/lafight_flow.jpg)
 
-* Database creation
+#<u>Wire Frames</u>
+![Login](/assets/images/markdown/LaFightclubLogin_flow.jpg)
+![home](/assets/images/markdown/lafight_home.jpg)
+![profile](/assets/images/markdown/lafightclub_profile_page.jpg)
+![edit](/assets/images/markdown/lafight_edit_page.jpg)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#<u>Future Features and bugs<u>
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+

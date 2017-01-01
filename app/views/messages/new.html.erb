@@ -3,7 +3,7 @@
 
 <%= form_for @message do |m| %>
   <%= m.text_field :challenger, :value => current_fighter.name %>
- message: <%= m.text_field :body %>
+ message: <%= m.text_area :body %>
  date: <%= m.text_field :date %>
  time: <%= m.text_field :time %>
  location: <%= m.text_field :location %>

@@ -19,4 +19,5 @@ class Fighter < ActiveRecord::Base
   end
 
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
+
 end
