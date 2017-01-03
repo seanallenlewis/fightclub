@@ -26,7 +26,7 @@
   <h1>Sort fighters by location</h1>
 
   <%= form_tag '/fighters', method: "get" do %>
-    <%= select_tag(:location, '<option value=""></option><option value="Hollywood">Hollywood</option><option value="Beverly Hills">Beverly Hills</option>'.html_safe) %>
+    <%= select_tag(:location, '<option value=""></option><option value="Beverly Hills">Beverly Hills</option><option value="Culver City">Culver City</option><option value="Downtown">Downtown</option><option value="East LA">East LA</option><option value="Glendale">Glendale</option><option value="Hollywood">Hollywood</option><option value="Koreatown">Koreatown</option><option value="Midcity">Midcity</option><option value="North Hollywood">North Hollywood</option><option value="Santa Monica">Santa Monica</option><option value="Silverlake">Silverlake</option><option value="South LA">South LA</option><option value="Venice">Venice</option>'.html_safe) %>
     <%= submit_tag "search" %>
   <% end %>
 

@@ -12,20 +12,30 @@
       <h3>Member Since: </h3> <h4><%= @date.to_s[0..10] %></h4>
       <h3>Style: <%= @fighter.style %></h3>
       <!-- <h3>Record:  <%=@fighter.wins%> / <%=@fighter.losses%> -->
-      <button id="challengeButton" type="button" class="btn btn-secondary btn-lg"><%= link_to "Challenge Fighter",  new_challenge_path %></button>
+      <button id="challengeButton" type="button" class="btn btn-secondary btn-lg"><%= link_to "Challenge Fighter",  new_challenge_path(:challenged => @fighter.id) %></button>
     </div>
   </div>
 </div>
 
 <div class="container">
-<ul>
   <% Challenge.where(challengee_id: @fighter.id).each do |c| %>
-
-  <li> <%= link_to c.fighter.name, fighter_path(c.fighter) %></li>
+    <% if c.accepted == nil %>
+      <div class="alert alert-dismissible alert-info col-md-4">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= link_to "Challenge from #{c.fighter.name}", challenge_path(c), class:"alert-link" %>
+      </div>
+    <% elsif c.accepted == true %>
+      <div class="alert alert-dismissible alert-success col-md-4">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= link_to "CHALLENGE ACCEPTED from #{c.fighter.name}", challenge_path(c), class:"alert-link" %>
+    <% elsif c.accepted == false %>
+      <div class="alert alert-dismissible alert-danger col-md-4">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= link_to "CHALLENGE DENIED from #{c.fighter.name}", challenge_path(c), class:"alert-link" %>
+    <% end %>
   <% end %>
-
-</ul>
 </div>
+
 
 <div class="container">
     <table class="table table-bordered">

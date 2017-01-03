@@ -1,6 +1,6 @@
 class Challenge < ActiveRecord::Base
   belongs_to :fighter, foreign_key: :fighter_id
-  belongs_to :challengee
+  # belongs_to :challengee
 
   # after_create do |p|
   #   if !Challenge.find(:first, :conditions => { :challengee_id => p.fighter_id })

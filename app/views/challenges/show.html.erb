@@ -1,2 +1,13 @@
-<h1>Challenges#show</h1>
-<p>Find me in app/views/challenges/show.html.erb</p>
+<div class="container">
+  <h4><%= link_to '<- back', :back %></h4><br> <br>
+
+  <h1>Challenge</h1>
+
+  <h3>From: <%= Fighter.find_by_id(@challenge.fighter_id).name %></h3>
+  <h3> To: <%= Fighter.find_by_id(@challenge.challengee_id).name %></h3>
+    <h3>Message: <%= @challenge.body %></h3>
+    <h2>your challenger wants to fight at:</h2>
+    <h3><%= @challenge.location %>
+    <h3>Date: <%= @challenge.fight_date %> </h3>
+
+</div>

@@ -1,10 +1,15 @@
-<h1>Challenges#new</h1>
-<p>Find me in app/views/challenges/new.html.erb</p>
 
-<%= form_for @challenge do |c| %>
-<h2>From: <%= current_fighter.name %></h2>
- message: <%= c.text_area :body %>
- date: <%= c.text_field :fight_date %>
- location: <%= c.text_field :location %>
- <%= c.submit "Send Challenge" %>
- <% end %>
+<div class="container">
+  <h1>Challenge Fighter</h1>
+    <%= form_for @challenge do |c| %>
+      <h2>From: <%= current_fighter.name %></h2>
+         message: <%= c.text_area :body %><br>
+         date: <%= c.text_field :fight_date %><br>
+         location: <%= c.text_field :location %><br>
+         challengee <%= c.text_field :challengee_id, value:@challengee.id %><br>
+  
+         <%# @challengee.inspect %>
+
+       <%= c.submit "Send Challenge" %>
+     <% end %>
+</div>
