@@ -2,11 +2,13 @@ class Fighter < ActiveRecord::Base
 
   has_secure_password
   has_many :messages
+  has_many :challenges, dependent: :destroy
+  has_many :challengees, through: :challenges, source: :fighter
   has_attached_file :profile_pic,
                       styles: { medium: "400x400#", thumb: "100x100#" },
                       storage: :s3,
                       url: ":s3_domain_url",
-                      path: "/:class/:attached/:id_partition/:style/:filename",
+                      path: "/:class/:attachment/:id_partition/:style/:filename",
                       s3_region: ENV["S3_REGION"],
                       s3_credentials: Proc.new{ |a| a.instance.s3_credentials }
 

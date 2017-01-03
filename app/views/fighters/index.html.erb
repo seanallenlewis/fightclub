@@ -1,6 +1,6 @@
 
 
-<h1>The Cage</h1>
+
 <div class="container">
   <h1>Newest Fighters</h1>
   <div class="row-fluid">
@@ -10,7 +10,7 @@
       <% @fighters.order(id: :desc).limit(8).each do |f| %>
         <li class="span4" style="float:left;">
           <div class="thumbnail" style="width:130px; text-align:center;">
-            <img data-src=<%= image_tag f.profile_pic.url(:thumbnail), class: "thumbnail" %>
+            <%= image_tag f.profile_pic.url(:thumb), class: "thumbnail" %>
             <div class="caption">
               <h3><%= link_to(f.name, fighter_path(f)) %>
             </div>
@@ -25,15 +25,17 @@
 <div class="container">
   <h1>Sort fighters by location</h1>
 
-
-  <%= select_tag(:location, '<option value=""></option><option value="Hollywood">Hollywood</option><option value="Beverly Hills">Beverly Hills</option>'.html_safe) %></select>
+  <%= form_tag '/fighters', method: "get" do %>
+    <%= select_tag(:location, '<option value=""></option><option value="Hollywood">Hollywood</option><option value="Beverly Hills">Beverly Hills</option>'.html_safe) %>
+    <%= submit_tag "search" %>
+  <% end %>
 
   <div class="row-fluid">
     <ul class="thumbnails">
-      <% @fighters.order(id: :desc).limit(8).each do |f| %>
+      <% @fighters_sorted.limit(8).each do |f| %>
         <li class="span4" style="float:left;">
           <div class="thumbnail" style="width:130px; text-align:center;">
-            <img data-src=<%= image_tag f.profile_pic.url(:thumbnail), class: "thumbnail" %>
+            <img data-src=<%= image_tag f.profile_pic.url(:thumb), class: "thumbnail" %>
             <div class="caption">
               <h3><%= link_to(f.name, fighter_path(f)) %>
             </div>

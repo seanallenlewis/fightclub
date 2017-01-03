@@ -1,4 +1,3 @@
-<%= link_to "The Cage Page", fighters_path %>
 
 <div class="container">
   <div class="row">
@@ -13,15 +12,19 @@
       <h3>Member Since: </h3> <h4><%= @date.to_s[0..10] %></h4>
       <h3>Style: <%= @fighter.style %></h3>
       <!-- <h3>Record:  <%=@fighter.wins%> / <%=@fighter.losses%> -->
-      <button id="challengeButton" type="button" class="btn btn-secondary btn-lg"><%= link_to "Challenge Fighter",  new_message_path %></button>
+      <button id="challengeButton" type="button" class="btn btn-secondary btn-lg"><%= link_to "Challenge Fighter",  new_challenge_path %></button>
     </div>
   </div>
 </div>
 
 <div class="container">
+<ul>
+  <% Challenge.where(challengee_id: @fighter.id).each do |c| %>
 
+  <li> <%= link_to c.fighter.name, fighter_path(c.fighter) %></li>
+  <% end %>
 
-
+</ul>
 </div>
 
 <div class="container">
@@ -42,5 +45,6 @@
 
 </div>
 
+<div class="container">
 <%= link_to "Edit Fighter Info", edit_fighter_path %>
-<%= link_to "Logout", logout_path, {method: "DELETE"} %>
+</div>

@@ -4,6 +4,7 @@ class FightersController < ApplicationController
 
   def index
     @fighters = Fighter.all
+    @fighters_sorted = Fighter.where(location: params[:location])
   end
 
   def show
@@ -30,7 +31,8 @@ class FightersController < ApplicationController
 
   def update
     @fighter = Fighter.find(params[:id])
-    if @fighter.update_attributes(fighter_params) and redirect_to fighter_path(@fighter)
+    if @fighter.update_attributes(fighter_params)
+      redirect_to fighter_path(@fighter)
     else
       redirect_to edit_fighter_path
     end
@@ -42,7 +44,8 @@ class FightersController < ApplicationController
     redirect_to fighters_path
   end
 
+  private
   def fighter_params
-    params.require(:fighter).permit(:name, :email, :password, :age, :weight, :style, :location, :likes1, :likes2, :likes3, :likes4, :likes5, :likes6, :likes7, :likes8, :likes9, :likes10, :hates1, :hates2, :hates3, :hates4, :hates5, :hates6, :hates7, :hates8, :hates9, :hates10, :password_confirmation )
+    params.require(:fighter).permit(:name, :email, :profile_pic, :password, :age, :weight, :style, :location, :likes1, :likes2, :likes3, :likes4, :likes5, :likes6, :likes7, :likes8, :likes9, :likes10, :hates1, :hates2, :hates3, :hates4, :hates5, :hates6, :hates7, :hates8, :hates9, :hates10, :password_confirmation )
   end
 end
