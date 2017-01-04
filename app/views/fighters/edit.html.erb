@@ -1,13 +1,14 @@
-<h1>Edit Fighter</h1>
+
 <div class="container">
-<%=form_for @fighter do |f| %>
- <h2>name</h2> <%= f.text_field :name %>
- <h2>email</h2> <%= f.text_field :email %>
- <h2>new password</h2> <%= f.text_field :password %>
- <h2>confirm password</h2> <%= f.text_field :password_confirmation %>
+  <h1>Edit Fighter</h1>
+  <%=form_for @fighter do |f| %>
+   <h2>name</h2> <%= f.text_field :name %>
+   <h2>email</h2> <%= f.text_field :email %>
+   <h2>new password</h2> <%= f.text_field :password %>
+   <h2>confirm password</h2> <%= f.text_field :password_confirmation %>
 </div>
 <div class="container">
-  <h2>profile pic</h2> <%= f.file_field :profile_pic %> 
+  <h2>profile pic</h2> <%= f.file_field :profile_pic %>
   <h2>age</h2> <%= f.number_field :age %>
   <h2>weight</h2> <%= f.number_field :weight %>
   <h2>fighting style</h2> <%= f.text_field :style %>
@@ -65,7 +66,8 @@
     </tr>
 
   </table>
- <%= f.submit "Save" %>
+ <%= f.submit "Save" %><br><br>
+
  <%= link_to 'Delete Profile', @fighter, method: :delete, data: { confirm: "Are you sure?" } %>
  <% end %>
 </div>

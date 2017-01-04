@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 
     resources :sessions, only: [:new, :create]
 
-    resources :challenges, only: [:new, :create, :show, :destroy]
+    resources :challenges, only: [:new, :create, :show, :destroy, :update]
 
   end

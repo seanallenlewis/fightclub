@@ -12,7 +12,11 @@
       <h3>Member Since: </h3> <h4><%= @date.to_s[0..10] %></h4>
       <h3>Style: <%= @fighter.style %></h3>
       <!-- <h3>Record:  <%=@fighter.wins%> / <%=@fighter.losses%> -->
-      <button id="challengeButton" type="button" class="btn btn-secondary btn-lg"><%= link_to "Challenge Fighter",  new_challenge_path(:challenged => @fighter.id) %></button>
+      <% if current_fighter.id == @fighter.id %>
+        <button id="editButton" type="button" class="btn btn-default btn-lg"><%= link_to "Edit Fighter Info", edit_fighter_path %></button>
+      <% else %>
+        <button id="challengeButton" type="button" class="btn btn-secondary btn-lg"><%= link_to "Challenge Fighter",  new_challenge_path(:challenged => @fighter.id) %></button>
+      <% end %>
     </div>
   </div>
 </div>
@@ -20,18 +24,20 @@
 <div class="container">
   <% Challenge.where(challengee_id: @fighter.id).each do |c| %>
     <% if c.accepted == nil %>
-      <div class="alert alert-dismissible alert-info col-md-4">
+      <div class="alert alert-dismissible alert-info chaltag col-md-4">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <%= link_to "Challenge from #{c.fighter.name}", challenge_path(c), class:"alert-link" %>
       </div>
     <% elsif c.accepted == true %>
-      <div class="alert alert-dismissible alert-success col-md-4">
+      <div class="alert alert-dismissible alert-success chaltag col-md-4">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <%= link_to "CHALLENGE ACCEPTED from #{c.fighter.name}", challenge_path(c), class:"alert-link" %>
+      </div>
     <% elsif c.accepted == false %>
-      <div class="alert alert-dismissible alert-danger col-md-4">
+      <div class="alert alert-dismissible alert-danger chaltag col-md-4">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <%= link_to "CHALLENGE DENIED from #{c.fighter.name}", challenge_path(c), class:"alert-link" %>
+      </div>
     <% end %>
   <% end %>
 </div>

@@ -39,9 +39,12 @@ class FightersController < ApplicationController
   end
 
   def destroy
-    Fighter.find(params[:id]).destroy
-    flash[:success] = "Profile Deleted"
-    redirect_to fighters_path
+    @fighter = Fighter.find(params[:id])
+    if @fighter.destroy
+      session[:fighter_id] = nil
+      flash[:success] = "Profile Deleted"
+      redirect_to fighters_path
+    end
   end
 
   private

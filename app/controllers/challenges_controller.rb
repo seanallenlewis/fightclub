@@ -9,6 +9,15 @@ class ChallengesController < ApplicationController
     @challengee = Fighter.find(params[:challenged])
   end
 
+  def update
+    @challenge = Challenge.find(params[:id])
+    if @challenge.update_attributes(challenge_params)
+      redirect_to fighter_path(@challenge.challengee_id)
+    else
+      render fighter_path(current_fighter.id)
+    end
+  end
+
   def create
     @challenge = Challenge.new(challenge_params)
     @challenge.fighter = current_fighter
@@ -17,7 +26,6 @@ class ChallengesController < ApplicationController
     else
       render :new
     end
-
   end
 
   def destroy
@@ -27,6 +35,6 @@ class ChallengesController < ApplicationController
   end
 
   def challenge_params
-    params.require(:challenge).permit(:fighter, :challengee_id, :body, :date, :location)
+    params.require(:challenge).permit(:fighter, :challengee_id, :body, :date, :location, :accepted)
   end
 end
