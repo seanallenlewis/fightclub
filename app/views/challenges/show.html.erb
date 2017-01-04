@@ -9,10 +9,13 @@
     <h2>your challenger wants to fight at:</h2>
     <h3><%= @challenge.location %>
     <h3>Date: <%= @challenge.fight_date %> </h3>
-    <%= form_for @challenge do |a|%>
-     <h4>Accept Challenge <%= a.check_box :accepted, {}, true, nil%> </h4>
-     <h4>Refuse Challenge <%= a.check_box :accepted, {}, false, nil%></h4>
-     <%= a.submit %>
+
+    <% if current_fighter.id == @challenge.challengee_id %>
+      <%= form_for @challenge do |a|%>
+       <h4>Accept Challenge <%= a.check_box :accepted, {}, true, nil%> </h4>
+       <h4>Refuse Challenge <%= a.check_box :accepted, {}, false, nil%></h4>
+       <%= a.submit %>
+      <% end %>
     <% end %>
 
 </div>

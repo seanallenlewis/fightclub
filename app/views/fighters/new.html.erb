@@ -1,9 +1,12 @@
-<h1> New Fighter</h1>
 
-<%= form_for @fighter do |f| %>
- name <%= f.text_field :name %>
- email <%= f.text_field :email %>
- password <%= f.text_field :password %>
- confirm password <%= f.text_field :password_confirmation %>
- <%= f.submit "Save Fighter" %>
- <% end %>
+<div class="container">
+  <legend> New Fighter</legend>
+
+  <%= form_for @fighter do |f| %>
+   name <%= f.text_field :name %>
+   email <%= f.text_field :email %>
+   password <%= f.text_field :password %>
+   confirm password <%= f.text_field :password_confirmation %>
+   <%= f.submit "Save Fighter" %>
+   <% end %>
+</div>
